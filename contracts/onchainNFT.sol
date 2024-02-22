@@ -12,5 +12,7 @@ contract DNLNFT is ERC721URIStorage, Ownable(msg.sender) {
     function mint (uint _index) external onlyOwner{
         _mint (msg.sender, tokenID);
         _setTokenURI(tokenID, uri[_index]);
+
+        tokenID = tokenID + 1;
     }
 }
